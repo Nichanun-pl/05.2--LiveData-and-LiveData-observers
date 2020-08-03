@@ -70,7 +70,7 @@ class GameViewModel : ViewModel() {
 
     init {
         word.value = ""
-        score.value = 0
+        _score.value = 0
         Log.i("GameViewModel", "GameViewModel created!")
         resetList()
         nextWord()
@@ -86,11 +86,11 @@ class GameViewModel : ViewModel() {
 
     /** Methods for updating the UI **/
     fun onSkip() {
-        score.value = (score.value)?.minus(1)
+        _score.value = (score.value)?.minus(1)
         nextWord()
     }
     fun onCorrect() {
-        score.value = (score.value)?.plus(1)
+        _score.value = (score.value)?.plus(1)
         nextWord()
     }
 
