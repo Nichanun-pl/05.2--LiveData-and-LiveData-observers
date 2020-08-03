@@ -53,7 +53,9 @@ class GameFragment : Fragment() {
         // Get the viewModel
         viewModel = ViewModelProviders.of(this).get(GameViewModel::class.java)
 
+        /** Setting up LiveData observation relationship **/
         viewModel.score.observe(viewLifecycleOwner, Observer { newScore ->
+            binding.scoreText.text = newScore.toString()
         })
 
         binding.correctButton.setOnClickListener { onCorrect() }
