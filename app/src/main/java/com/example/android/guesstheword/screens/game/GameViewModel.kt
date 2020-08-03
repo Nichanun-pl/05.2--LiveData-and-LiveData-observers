@@ -66,6 +66,8 @@ class GameViewModel : ViewModel() {
     }
 
     init {
+        word.value = ""
+        score.value = 0
         Log.i("GameViewModel", "GameViewModel created!")
         resetList()
         nextWord()
